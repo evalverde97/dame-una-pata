@@ -1,0 +1,1 @@
+-  traducir archivos y nombres de componentes (low)

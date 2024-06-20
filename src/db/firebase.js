@@ -5,13 +5,13 @@ import { getStorage } from "firebase/storage";
 
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN_KEY,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyCdHbGSZryB-fi_b56fMMvwprLQcES15IQ",
+  authDomain: "dame-una-pata0.firebaseapp.com",
+  projectId: "dame-una-pata0",
+  storageBucket: "dame-una-pata0.appspot.com",
+  messagingSenderId: "512253780266",
+  appId: "1:512253780266:web:9e98d79eb0ea10f8a3fe53",
+  measurementId: "G-SXHJNHMZHE"
 };
 
 initializeApp(firebaseConfig);
