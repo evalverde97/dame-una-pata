@@ -1,6 +1,5 @@
 # README CRIOLLO
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+USAR NVM 20
 
 ## Available Scripts
 
