@@ -6,17 +6,17 @@ import { EstadoProveedor } from "./context/EstadoGeneral";
 import Home from "./pages/Home";
 import LogIn from "./pages/Login";
 
-function App() {
+const App = () => {
   return (
     <EstadoProveedor>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </Router>
     </EstadoProveedor>
   );
-}
+};
 
 export default App;

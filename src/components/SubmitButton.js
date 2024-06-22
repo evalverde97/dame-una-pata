@@ -1,9 +1,15 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-const SubmitButton = ({ onClick, children }) => {
+const SubmitButton = ({ children }) => {
   return (
-    <Button variant="contained" color="primary" onClick={onClick} fullWidth>
+    <Button
+      type="submit"
+      fullWidth
+      variant="contained"
+      color="primary"
+      sx={{ mt: 3, mb: 2 }}
+    >
       {children}
     </Button>
   );

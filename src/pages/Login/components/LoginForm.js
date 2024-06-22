@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+// src/components/LoginForm.js
+import React from "react";
 import TextInput from "../../../components/TextInput";
 import SubmitButton from "../../../components/SubmitButton";
 import Box from "@mui/material/Box";
 
-const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Manejar el login
-    console.log("Email:", email);
-    console.log("Password:", password);
-  };
-
+const LoginForm = ({
+  email,
+  password,
+  setEmail,
+  setPassword,
+  isSignUp,
+  setIsSignUp,
+  error,
+  handleSubmit,
+}) => {
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
       <TextInput
@@ -28,7 +28,16 @@ const LoginForm = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <SubmitButton>Log In</SubmitButton>
+      {error && <Box sx={{ color: "red", mt: 1 }}>{error}</Box>}
+      <SubmitButton>{isSignUp ? "Sign Up" : "Log In"}</SubmitButton>
+      <Box
+        sx={{ mt: 2, cursor: "pointer", color: "blue" }}
+        onClick={() => setIsSignUp(!isSignUp)}
+      >
+        {isSignUp
+          ? "Already have an account? Log In"
+          : "Don’t have an account? Sign Up"}
+      </Box>
     </Box>
   );
 };
