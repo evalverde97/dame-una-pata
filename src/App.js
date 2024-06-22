@@ -5,6 +5,7 @@ import { EstadoProveedor } from "./context/EstadoGeneral";
 
 //components
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 //pages
 import AboutUs from "./pages/AboutUs";
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/account" element={<MyAccount />} />
         </Routes>
+        <Footer />
       </Router>
     </EstadoProveedor>
   );

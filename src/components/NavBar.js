@@ -1,13 +1,13 @@
-// src/components/NavBar.js
-import React from "react";
+import { Link } from "react-router-dom";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import HomeIcon from "@mui/icons-material/Home";
-import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
+
+import logo2 from "../assets/logo2.png";
 
 const NavBar = () => {
   return (
@@ -20,7 +20,16 @@ const NavBar = () => {
           component={Link}
           to="/"
         >
-          <HomeIcon />
+          <Box
+            component="img"
+            sx={{
+              height: 24,
+              width: 24,
+              borderRadius: 2,
+            }}
+            alt="Home"
+            src={logo2}
+          />
         </IconButton>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <Box sx={{ display: "flex", gap: 2 }}>

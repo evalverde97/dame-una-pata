@@ -1,4 +1,3 @@
-// src/pages/LogIn.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +9,7 @@ import Typography from "@mui/material/Typography";
 
 import LoginForm from "./components/LoginForm";
 
-import { auth } from "../../firebase";
+import { auth } from "../../db/firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,

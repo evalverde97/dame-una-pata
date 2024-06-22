@@ -1,4 +1,3 @@
-// src/pages/AboutUs.js
 import React from "react";
 
 const MyAccount = () => {
