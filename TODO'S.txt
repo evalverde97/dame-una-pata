@@ -1,1 +1,20 @@
 -  traducir archivos y nombres de componentes (low)
+- crear nueva coleccion (final) con todos los nombres en ingles
+y los mismos parametros que tiene el modelo final: 
+
+ex. {
+  "especie": "Perro",
+  "nombre": "Max",
+  "edad": "Adulto",
+  "genero": "Macho",
+  "raza": "Labrador",
+  "tamano": "Grande",
+  "estado_salud": "Saludable",
+  "esterilizado": true,
+  "nivel_actividad": "Alto",
+  "compatibilidad": {
+    "ninos": true,
+    "otros_animales": true,
+    "personas_mayores": false
+  }
+}

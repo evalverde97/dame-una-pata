@@ -6,14 +6,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-
+import capitalizeFirstLetter from "../utils/formatter";
 import logo2 from "../assets/logo2.png";
 
 const NavBar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton
+        {/* <IconButton
           edge="start"
           color="inherit"
           aria-label="home"
@@ -30,11 +30,11 @@ const NavBar = () => {
             alt="Home"
             src={logo2}
           />
-        </IconButton>
+        </IconButton> */}
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <Box sx={{ display: "flex", gap: 2 }}>
             <Button color="inherit" component={Link} to="/">
-              Home
+              Dame una pata
             </Button>
             <Button color="inherit" component={Link} to="/about">
               Sobre Nosotros

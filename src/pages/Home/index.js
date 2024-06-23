@@ -1,3 +1,6 @@
+import React, {useEffect, useState} from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../db/firebase';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
@@ -5,38 +8,24 @@ import CardComponent from "../../components/Card";
 import CarouselComponent from "../../components/Carousel";
 import Testimonials from "../../components/Testimonials";
 
-import aguila from "../../assets/animals/aguila.jpg";
-
 import "./index.scss";
 
 const Home = () => {
-  // Ejemplo de datos de animales (pueden ser estáticos o dinámicos)
-  const animals = [
-    {
-      id: 1,
-      name: "Rex",
-      description: "Perro de raza mixta, juguetón y cariñoso.",
-      imageUrl: "../../assets/animals/aguila.jpg",
-    },
-    {
-      id: 2,
-      name: "Luna",
-      description: "Gata negra, tranquila y sociable con otros gatos.",
-      imageUrl: { aguila },
-    },
-    {
-      id: 3,
-      name: "Luna",
-      description: "Gata negra, tranquila y sociable con otros gatos.",
-      imageUrl: { aguila },
-    },
-    {
-      id: 4,
-      name: "Luna",
-      description: "Gata negra, tranquila y sociable con otros gatos.",
-      imageUrl: { aguila },
-    },
-  ];
+
+  const [animals, setAnimals] = useState([]);
+  useEffect(() => {
+    const fetchAnimals = async () => {
+      const animalsCol = collection(db, 'animales-en-adopcion');
+      const animalsSnapshot = await getDocs(animalsCol);
+      const animalsList = animalsSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setAnimals(animalsList);
+    };
+
+    fetchAnimals();
+  }, []);
 
   return (
     <div className="home">

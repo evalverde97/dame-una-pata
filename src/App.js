@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import LogIn from "./pages/Login";
 import MyAccount from "./pages/MyAccount";
+import PetDetail from './pages/PetDetail'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<LogIn />} />
           <Route path="/" element={<Home />} />
+          <Route path="/detalle/:id" element={<PetDetail />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/account" element={<MyAccount />} />
