@@ -2,6 +2,14 @@
     min-height: 100vh;
     padding-bottom: 100px;
     box-sizing: border-box;
+
+    .adoption-modal {
+      position: absolute;
+      top: 30%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
   }
 
   
