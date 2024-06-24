@@ -1,8 +1,10 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
+import Banner from "../../components/Banner";
 import CardComponent from "../../components/Card";
-import CarouselComponent from "../../components/Carousel";
+import AdoptionModal from "../../components/AdoptionModal";
+import Faqs from "../../components/Faqs";
 import Testimonials from "../../components/Testimonials";
 
 import aguila from "../../assets/animals/aguila.jpg";
@@ -40,10 +42,12 @@ const Home = () => {
 
   return (
     <div className="home">
-      <CarouselComponent />
-      <Testimonials />
+      {/* <CarouselComponent /> */}
+      <Banner />
+      <AdoptionModal className="adoption-modal" />
+      <Faqs />
       <Container>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} classname="home-container_grid">
           {animals.map((animal) => (
             <Grid item xs={12} sm={6} md={4} key={animal.id}>
               <CardComponent animal={animal} />
@@ -51,6 +55,7 @@ const Home = () => {
           ))}
         </Grid>
       </Container>
+      <Testimonials />
     </div>
   );
 };

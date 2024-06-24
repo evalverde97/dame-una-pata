@@ -6,6 +6,7 @@ import { EstadoProveedor } from "./context/EstadoGeneral";
 //components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import AdoptionModal from "./components/AdoptionModal";
 
 //pages
 import AboutUs from "./pages/AboutUs";
@@ -13,6 +14,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import LogIn from "./pages/Login";
 import MyAccount from "./pages/MyAccount";
+import Listing from "./pages/Listing";
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/account" element={<MyAccount />} />
+          <Route path="/component" element={<AdoptionModal />} />
+          <Route path="/listado" element={<Listing />} />
         </Routes>
         <Footer />
       </Router>

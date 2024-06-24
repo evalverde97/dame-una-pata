@@ -9,7 +9,7 @@ import aguila from "../../assets/animals/aguila.jpg";
 import "./index.scss";
 
 const CardComponent = ({ animal }) => {
-  const { name, description, imageUrl } = animal;
+  const { name, description } = animal;
 
   return (
     <Card className="card">
