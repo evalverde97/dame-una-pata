@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
+import { useParams } from 'react-router-dom';
 import { db } from '../../db/firebase';
 import { Container, Grid, Paper, Typography, Box, Button } from '@mui/material';
 import capitalizeFirstLetter, { formatString } from '../../utils/formatter';
 import CarouselRecomendation from '../../components/CarouselRecomendation';
+import PetCard from '../../components/PetDetail';
+import Suricata from '../../assets/animals/suricata.jpg';
 
 const PetDetail = () => {
   const { id } = useParams();
@@ -47,14 +49,19 @@ const PetDetail = () => {
   // TODO - hacer validaciones generales para que si existe cada propiedad se muestre, sino no
   return (
     <Container maxWidth="lg">
-      <Paper elevation={1} sx={{ padding: 2, marginTop: 3 }}>
+      <Paper elevation={2} sx={{ padding: 2, marginTop: 3 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={8}>
             <Box sx={{ textAlign: 'center' }}>
-              {mascota.imageUrl && <img src={mascota.imageUrl} alt={mascota.nombre} style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }} />}
+              {Suricata && <img src={Suricata} alt={mascota.nombre} style={{ width: '80%', maxHeight: '400px', objectFit: 'contain' }} />}
             </Box>
           </Grid>
           <Grid item xs={12} sm={4}>
+            <Box sx={{ textAlign: 'center' }}>
+              <PetCard pet={mascota} />
+            </Box>
+          </Grid>
+          {/* <Grid item xs={12} sm={4}>
             <Typography variant="h4" component="h1" gutterBottom>
               {capitalizeFirstLetter(mascota.nombre)}
             </Typography>
@@ -64,7 +71,7 @@ const PetDetail = () => {
               </Typography>
             ))}
             <Button variant="contained" color="primary">
-              Adoptar
+              Preguntar por mi
             </Button>
           </Grid>
           <Grid>
@@ -73,6 +80,13 @@ const PetDetail = () => {
                 Descripción:
                 {mascota.descripcion}
             </Typography>}
+          </Grid> */}
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={8}>
+            <Box sx={{ textAlign: 'center' }}>
+              {mascota.imageUrl && <img src={mascota.imageUrl} alt={mascota.nombre} style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }} />}
+            </Box>
           </Grid>
         </Grid>
       </Paper>

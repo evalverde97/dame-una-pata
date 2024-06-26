@@ -1,0 +1,36 @@
+.profile-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-paper {
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+  }
+  
+  .profile-details .MuiGrid-item {
+    margin-bottom: 10px;
+  }
+  

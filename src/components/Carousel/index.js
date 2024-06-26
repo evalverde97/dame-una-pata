@@ -7,6 +7,14 @@ import tigre from "../../assets/animals/tigre.jpg";
 
 import "./styles.scss";
 
+const images = [
+  { src: aguila },
+  { src: serpiente },
+  { src: suricata },
+  { src: tigre },
+  // Agrega más imágenes según sea necesario
+];
+
 const CarouselComponent = () => {
   return (
     <Carousel
@@ -16,19 +24,11 @@ const CarouselComponent = () => {
       className="carousel"
       renderThumbs={() => null} // Opcional: deshabilita las miniaturas
     >
-      <div className="slide">
-        <img src={aguila} alt="Animal 1" />
-      </div>
-      <div className="slide">
-        <img src={suricata} alt="Animal 2" />
-      </div>
-      <div className="slide">
-        <img src={serpiente} alt="Animal 3" />
-      </div>
-      <div className="slide">
-        <img src={tigre} alt="Animal 3" />
-      </div>
-      {/* Agrega más imágenes según sea necesario */}
+      {images.map((image, index) => (
+        <div className="slide" key={index}>
+          <img src={image.src} alt={`Animal ${index + 1}`} />
+        </div>
+      ))}
     </Carousel>
   );
 };
