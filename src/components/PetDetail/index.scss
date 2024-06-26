@@ -1,0 +1,53 @@
+.pet-card {
+    max-width: 345px;
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  
+    .pet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+  
+      .pet-name {
+        font-weight: bold;
+      }
+  
+      .pet-gender {
+        margin-left: 8px;
+      }
+    }
+  
+    .pet-size,
+    .pet-personality,
+    .pet-details {
+      margin-bottom: 8px;
+    }
+  
+    .pet-button {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  
+    .pet-interest {
+      font-size: 0.875rem;
+      color: #757575;
+      margin-bottom: 16px;
+    }
+  
+    .pet-details {
+      font-size: 0.875rem;
+      color: #757575;
+  
+      > * {
+        margin-bottom: 4px;
+      }
+    }
+  
+    .pet-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+  }

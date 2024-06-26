@@ -7,7 +7,7 @@ const Testimonials = () => {
   return (
     <section className="testimonials">
       <Container>
-        <Typography variant="h4" align="center" gutterBottom>
+        <Typography variant="h5" align="center" gutterBottom>
           Testimonios
         </Typography>
         <div className="testimonial-grid">

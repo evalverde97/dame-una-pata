@@ -18,3 +18,16 @@ ex. {
     "personas_mayores": false
   }
 }
+
+example en ingles para mascotas: 
+const pet = {
+  name: 'Flopi',
+  gender: 'Hembra',
+  size: 'Pequeño',
+  personality: 'Mimoso',
+  interestCount: 5,
+  weight: 0.9,
+  age: 2,
+  shelter: 'tiendapuppis',
+  location: 'CABA'
+};
