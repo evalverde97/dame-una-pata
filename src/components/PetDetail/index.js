@@ -38,7 +38,7 @@ const PetCard = ({ pet }) => {
       const GenderIcon = ({ gender }) => {
         return (
             <>
-                {gender === 'hombre' ? (
+                {gender === 'macho' ? (
                     <Male sx={{ fontSize: 32, color: 'blue' }} />
                 ) : gender === 'hembra' ? (
                     <Female sx={{ fontSize: 32, color: 'pink' }} />

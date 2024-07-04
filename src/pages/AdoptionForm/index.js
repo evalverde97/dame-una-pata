@@ -14,8 +14,10 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../db/firebase";
 import UploadImage from "../../components/UploadImage";
 import "./index.scss";
+import { v4 as uuidv4 } from 'uuid';
 
 const AdoptionForm = () => {
+  const id = uuidv4();
   const [formData, setFormData] = useState({
     actividad: "",
     compatibilidad: {
@@ -65,7 +67,7 @@ const AdoptionForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const docRef = doc(db, "animales-en-adopcion", formData.nombre);
+      const docRef = doc(db, "pets", id);
       await setDoc(docRef, formData);
       console.log("Formulario enviado y datos guardados en Firestore");
     } catch (error) {
