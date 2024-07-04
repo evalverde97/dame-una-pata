@@ -11,13 +11,17 @@ import {
   Typography,
 } from "@mui/material";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../db/firebase";
+import { storage, db } from "../../db/firebase";
+import { uploadBytes, getDownloadURL, ref } from "firebase/storage";
 import UploadImage from "../../components/UploadImage";
 import "./index.scss";
 import { v4 as uuidv4 } from 'uuid';
+import ErrorFeedback from "../../components/ErrorFeedback";
 
 const AdoptionForm = () => {
   const id = uuidv4();
+  const [image, setImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
   const [formData, setFormData] = useState({
     actividad: "",
     compatibilidad: {
@@ -68,7 +72,12 @@ const AdoptionForm = () => {
     e.preventDefault();
     try {
       const docRef = doc(db, "pets", id);
+      const storageRef = ref(storage, `images/${id}`);
       await setDoc(docRef, formData);
+      await uploadBytes(storageRef, image);
+        const url = await getDownloadURL(storageRef);
+        setImageUrl(url);
+        await setDoc(docRef, { imageUrl: url }, { merge: true });
       console.log("Formulario enviado y datos guardados en Firestore");
     } catch (error) {
       console.error("Error al guardar los datos en Firestore:", error);
@@ -213,7 +222,7 @@ const AdoptionForm = () => {
             label="Personas Mayores"
           />
         </FormControl>
-        <UploadImage nombre={formData.nombre} id={id}/>
+        <UploadImage nombre={formData.nombre} id={id} />
         <Button
           type="submit"
           variant="contained"
