@@ -3,31 +3,21 @@
 y los mismos parametros que tiene el modelo final: 
 
 ex. {
-  "especie": "Perro",
-  "nombre": "Max",
-  "edad": "Adulto",
-  "genero": "Macho",
-  "raza": "Labrador",
-  "tamano": "Grande",
-  "estado_salud": "Saludable",
-  "esterilizado": true,
-  "nivel_actividad": "Alto",
+  "actividad": "Alto",
   "compatibilidad": {
     "ninos": true,
     "otros_animales": true,
     "personas_mayores": false
-  }
+  },
+  "edad": "2",
+  "especie": "Perro",
+  "esterilizado": true,
+  "genero": "Macho",
+  "interesados": 4,
+  "nombre": "Max",
+  "peso": 2.5
+  "raza": "Labrador",
+  "salud": "Saludable",
+  "tamano": "Grande",
+  "ubicacion": "CABA"
 }
-
-example en ingles para mascotas: 
-const pet = {
-  name: 'Flopi',
-  gender: 'Hembra',
-  size: 'Pequeño',
-  personality: 'Mimoso',
-  interestCount: 5,
-  weight: 0.9,
-  age: 2,
-  shelter: 'tiendapuppis',
-  location: 'CABA'
-};

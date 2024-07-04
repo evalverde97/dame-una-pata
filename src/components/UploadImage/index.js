@@ -29,7 +29,7 @@ const UploadImage = () => {
   };
 
   const saveImageUrlToFirestore = async (url) => {
-    const docRef = doc(db, 'animales-en-adopcion', 1);
+    const docRef = doc(db, 'pets', 1);
     try {
       await setDoc(docRef, { imageUrl: url }, { merge: true });
       console.log('URL de la imagen guardada en Firestore');
