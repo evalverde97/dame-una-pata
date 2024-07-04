@@ -27,11 +27,9 @@ export const PetProvider = ({ children }) => {
     };
 
     fetchPetIds();
-  }, []);
 
-  useEffect(() => {
     const fetchAllPets = async () => {
-setLoading(true);
+      setLoading(true);
       try {
         const pets = await Promise.all(
           petIds.map(async (id) => {
