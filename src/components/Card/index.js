@@ -4,19 +4,18 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-import aguila from "../../assets/animals/aguila.jpg";
 import capitalizeFirstLetter from "../../utils/formatter";
 import "./index.scss";
 
-const CardComponent = ({ animal }) => {
-  const { nombre, especie } = animal;
+const CardComponent = ({ pet }) => {
+  const { nombre, especie, imageUrl } = pet;
 
   return (
     <Card className="card">
       <CardMedia
         className="card-image"
         component="img"
-        image={aguila} //hardcoded la url de la imagen
+        image={imageUrl}
         alt={nombre}
       />
       <CardContent className="card-content">
@@ -27,7 +26,7 @@ const CardComponent = ({ animal }) => {
           {especie}
         </Typography>
         <div className="card-actions">
-          <Button size="small" color="primary" href={`/detalle/${animal.id}`}>
+          <Button size="small" color="primary" href={`/detalle/${pet.id}`}>
             Ver Más
           </Button>
         </div>

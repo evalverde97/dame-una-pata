@@ -58,14 +58,14 @@ const PetCard = ({ pet }) => {
           Tamaño: {getPawIcons(pet.tamano)}
         </Typography>
         <Typography variant="body2" className="pet-personality">
-          Personalidad: {pet.personality}
+          Personalidad: {pet.personalidad}
         </Typography>
         <Typography variant="body2" className="pet-interest">
-          {pet.interestCount} personas están interesadas
+          {pet.interesados} personas están interesadas
         </Typography>
         <Box className="pet-details">
           <Typography variant="body2">Peso: {pet.peso} Kg</Typography>
-          <Typography variant="body2">Años: {pet.edad} m</Typography>
+          <Typography variant="body2">Años: {pet.edad}</Typography>
           <Typography variant="body2">En: {pet.ubicaion}</Typography>
         </Box>
         <Button variant="contained" className="pet-button">

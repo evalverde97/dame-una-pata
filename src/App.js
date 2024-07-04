@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { EstadoProveedor } from "./context/EstadoGeneral";
+import { PetProvider } from "./context/PetContext";
 
 //components
 import NavBar from "./components/NavBar";
@@ -18,7 +18,7 @@ import AdoptionForm from "./pages/AdoptionForm";
 
 const App = () => {
   return (
-    <EstadoProveedor>
+    <PetProvider>
       <Router>
         <NavBar />
         <Routes>
@@ -32,7 +32,7 @@ const App = () => {
         </Routes>
         <Footer />
       </Router>
-    </EstadoProveedor>
+    </PetProvider>
   );
 };
 
