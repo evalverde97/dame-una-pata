@@ -213,7 +213,7 @@ const AdoptionForm = () => {
             label="Personas Mayores"
           />
         </FormControl>
-        <UploadImage />
+        <UploadImage nombre={formData.nombre} id={id}/>
         <Button
           type="submit"
           variant="contained"

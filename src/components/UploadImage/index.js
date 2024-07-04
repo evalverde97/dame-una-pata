@@ -5,7 +5,7 @@ import { storage, db } from "../../db/firebase";
 
 import "./index.scss";
 
-const UploadImage = () => {
+const UploadImage = ({id}) => {
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
 
@@ -18,7 +18,7 @@ const UploadImage = () => {
   const handleUpload = async () => {
     if (!image) return;
 
-    const storageRef = ref(storage, `images/${image.name}`);
+    const storageRef = ref(storage, `images/${id}`);
     try {
       await uploadBytes(storageRef, image);
       const url = await getDownloadURL(storageRef);
@@ -31,7 +31,7 @@ const UploadImage = () => {
   };
 
   const saveImageUrlToFirestore = async (url) => {
-    const docRef = doc(db, 'pets', 1);
+    const docRef = doc(db, 'pets', id);
     try {
       await setDoc(docRef, { imageUrl: url }, { merge: true });
       console.log("URL de la imagen guardada en Firestore");
