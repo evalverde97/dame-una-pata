@@ -1,6 +1,3 @@
-import React, {useEffect, useState} from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../db/firebase';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
@@ -9,7 +6,6 @@ import CarouselComponent from "../../components/Carousel";
 import Testimonials from "../../components/Testimonials";
 
 import "./index.scss";
-import UploadImage from '../../components/UploadImage';
 import { usePetContext } from '../../context/PetContext';
 
 const Home = () => {
