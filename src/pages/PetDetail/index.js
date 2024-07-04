@@ -13,14 +13,16 @@ const PetDetail = () => {
   const [mascota, setMascota] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [imageUrl, setImageUrl] = useState(null);
   useEffect(() => {
     const fetchMascota = async () => {
       try {
         const docRef = doc(db, 'animales-en-adopcion', id);
+        const docImg = await getDoc(docRef);
         const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
+        if (docSnap.exists() && docImg.exists()) {
           setMascota(docSnap.data());
+          setImageUrl(docImg.data().imageUrl);
         } else {
           console.log('No such document!');
         }
@@ -53,7 +55,7 @@ const PetDetail = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={8}>
             <Box sx={{ textAlign: 'center' }}>
-              {Suricata && <img src={Suricata} alt={mascota.nombre} style={{ width: '80%', maxHeight: '400px', objectFit: 'contain' }} />}
+              {Suricata && <img src={imageUrl} alt={mascota.nombre} style={{ width: '80%', maxHeight: '400px', objectFit: 'contain' }} />}
             </Box>
           </Grid>
           <Grid item xs={12} sm={4}>
