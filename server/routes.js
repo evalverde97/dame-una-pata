@@ -1,4 +1,3 @@
-// server/routes.js
 const path = require("path");
 const fs = require("fs").promises;
 const React = require("react");
@@ -20,7 +19,7 @@ const renderComponent = (Component) => {
 
 const configureRoutes = (app) => {
   app.get("*", async (req, res) => {
-    let Component = Home; // Ruta por defecto
+    let Component = Home;
 
     switch (req.path) {
       case "/login":
