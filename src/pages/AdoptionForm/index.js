@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { Snackbar, Alert } from '@mui/material';
 import {
   TextField,
   Button,
@@ -20,6 +22,8 @@ import ErrorFeedback from "../../components/ErrorFeedback";
 
 const AdoptionForm = () => {
   const id = uuidv4();
+  const navigate = useNavigate();
+  const [openSnackbar, setOpenSnackbar] = useState(false);
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
   const [formData, setFormData] = useState({
@@ -33,9 +37,9 @@ const AdoptionForm = () => {
     especie: "",
     esterilizado: false,
     genero: "",
-    interesados: 4,
+    interesados: 0,
     nombre: "",
-    peso: 2.5,
+    peso: 0,
     raza: "",
     salud: "",
     tamano: "",
@@ -78,10 +82,19 @@ const AdoptionForm = () => {
         const url = await getDownloadURL(storageRef);
         setImageUrl(url);
         await setDoc(docRef, { imageUrl: url }, { merge: true });
+        //TODO - Eliminar logs
       console.log("Formulario enviado y datos guardados en Firestore");
+      setOpenSnackbar(true);
+      setTimeout(() => {
+        navigate('/');
+      }, 2000); // 2000 ms = 2 segundos
     } catch (error) {
       console.error("Error al guardar los datos en Firestore:", error);
     }
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
   };
 
   return (
@@ -233,6 +246,16 @@ const AdoptionForm = () => {
           Enviar
         </Button>
       </form>
+      <Snackbar 
+        open={openSnackbar} 
+        autoHideDuration={6000} 
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
+          Formulario enviado exitosamente!
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
